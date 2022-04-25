@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header.js";
 import Homepage from "./Pages/Homepage";
 import Coinpage from "./Pages/Coinpage";
@@ -19,8 +19,10 @@ function App() {
     <BrowserRouter>
       <div className={classes.App}>
         <Header />
-        <Route path="/" component={Homepage} exact />
-        <Route path="/coins/:id" component={Coinpage} />
+        <Routes>
+          <Route path="/" component={Homepage} exact />
+          <Route path="/coins/:id" component={Coinpage} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
