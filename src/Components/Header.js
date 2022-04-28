@@ -46,7 +46,7 @@ const Header = () => {
         <Container>
           <Toolbar>
             <Typography
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/CryptoTracker-React")}
               className={classes.title}
               variant="h6"
             >
