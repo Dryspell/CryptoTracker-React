@@ -22,9 +22,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/CryptoTracker-React" element={<Homepage />} />
-          <Route path="/" element={<Homepage />}>
-            <Route path="coins/:id" element={<CoinPage />} />
-          </Route>
+          <Route path="/" element={<Homepage />} />
+          <Route path="coins/:id" element={<CoinPage />} />
         </Routes>
       </div>
     </BrowserRouter>
