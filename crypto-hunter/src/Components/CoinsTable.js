@@ -124,7 +124,7 @@ const CoinsTable = () => {
 
                     return (
                       <TableRow
-                        onClick={() => navigate(`/coin/${row.id}`)}
+                        onClick={() => navigate(`/coins/${row.id}`)}
                         className={classes.row}
                         key={row.name}
                       >
@@ -195,7 +195,7 @@ const CoinsTable = () => {
             justifyContent: "center",
           }}
           classes={{ ul: classes.pagination }}
-          count={(handleSearch()?.length / 10).toFixed(0)}
+          count={Number((handleSearch()?.length / 10).toFixed(0))} //Causing Warning due to type being string initially
           onChange={(_, value) => {
             setPage(value);
             window.scroll(0, 450);
