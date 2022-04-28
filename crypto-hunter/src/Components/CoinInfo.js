@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { HistoricalChart } from "../config/api";
 import { Line } from "react-chartjs-2";
+import { Chart as ChartJS, registerables } from "chart.js";
 import {
   CircularProgress,
   createTheme,
@@ -11,6 +12,8 @@ import {
 import SelectButton from "./SelectButton";
 import { chartDays } from "../config/data";
 import { CryptoState } from "../CryptoContext";
+
+ChartJS.register(...registerables);
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
@@ -72,8 +75,7 @@ const CoinInfo = ({ coin }) => {
           />
         ) : (
           <>
-            <Line />
-            {/* <Line
+            <Line
               data={{
                 labels: historicData.map((coin) => {
                   let date = new Date(coin[0]);
@@ -83,7 +85,6 @@ const CoinInfo = ({ coin }) => {
                       : `${date.getHours()}:${date.getMinutes()} AM`;
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
-
                 datasets: [
                   {
                     data: historicData.map((coin) => coin[1]),
@@ -99,7 +100,7 @@ const CoinInfo = ({ coin }) => {
                   },
                 },
               }}
-            /> */}
+            />
             <div
               style={{
                 display: "flex",
