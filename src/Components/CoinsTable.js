@@ -124,7 +124,9 @@ const CoinsTable = () => {
 
                     return (
                       <TableRow
-                        onClick={() => navigate(`/coins/${row.id}`)}
+                        onClick={() =>
+                          navigate(`/CryptoTracker-React/coins/${row.id}`)
+                        }
                         className={classes.row}
                         key={row.name}
                       >
